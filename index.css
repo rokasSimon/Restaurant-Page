@@ -1,0 +1,125 @@
+:root {
+    font-size: 18px;
+    font-family: 'poppins', sans-serif;
+    --main-background: rgb(51, 51, 51);
+    --navbar-color: rgb(51, 233, 127);
+    --text-color: rgb(44, 27, 22);
+    --hover-text: rgb(182, 182, 182);
+}
+html, body {
+    margin: 0px;
+    background-color: var(--main-background);
+}
+#content {
+    width: 100vw;
+}
+nav {
+    position: fixed;
+    top: 0px;
+    left: auto;
+    right: auto;
+    bottom: auto;
+
+    z-index: 3;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: 8vh;
+}
+.tab-link {
+    z-index: 3;
+    flex-grow: 1;
+    height: 100%;
+    border: none;
+    border-radius: 0px;
+    outline: none;
+    color: var(--text-color);
+    background-color: var(--navbar-color);
+    backdrop-filter: blur(5px);
+    font-family: 'poppins', sans-serif;
+    font-size: 1.3rem;
+    transition: 0.3s;
+}
+.tab-link:hover {
+    background-color: var(--main-background);
+    color: var(--hover-text);
+}
+.content-tab {
+    display: grid;
+    grid-template-areas: 
+    ". header ."
+    ". content .";
+    place-items: center;
+    transition: 0.7s;
+    z-index: 1;
+    position: absolute;
+    margin-top: 8vh;
+    width: 100%;
+    height: 92vh;
+    background-color: var(--main-background);
+}
+h1 {
+    order: 1;
+    grid-area: header;
+    font-style: italic;
+    font-size: 3rem;
+    text-align: center;
+    color: var(--hover-text);
+}
+h2 {
+    text-align: center;
+    background-color: var(--navbar-color);
+    color: var(--text-color);
+    width: 100%;
+}
+h3 {
+    margin-left: 0.5rem;
+    margin-bottom: 0rem;
+    color: var(--hover-text);
+}
+.content-column > div > p {
+    margin-left: 2rem;
+    margin-top: 0.2rem;
+    color: var(--hover-text);
+}
+.content-column {
+    width: 100%;
+    grid-area: content;
+    order: 2;
+}
+.large-text {
+    width: 35%;
+    text-align: center;
+    color: var(--hover-text);
+}
+.input-column {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+}
+.input-column > label {
+    color: var(--navbar-color);
+    margin-top: 1.5rem;
+}
+.input-column > input, .input-column > textarea {
+    outline: none;
+    padding: 0.8rem;
+}
+.input-column > textarea {
+    min-width: 95%;
+    min-height: 10rem;
+}
+.submit {
+    margin-top: 1.5rem;
+    width: 25%;
+    padding: 1rem 2rem;
+    outline: none;
+    border: none;
+    background-color: var(--navbar-color);
+    color: var(--text-color);
+}
+.submit:hover {
+    background-color: var(--hover-text);
+    color: var(--main-background);
+}
